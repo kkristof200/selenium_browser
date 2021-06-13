@@ -3,3 +3,4 @@ from .utils import Utils
 
 from .core import *
 from .models import *
+from .addons import *
