@@ -1,0 +1,5 @@
+k-selenium-cookies==0.0.4
+kproxy==0.0.1
+noraise==0.0.16
+selenium==3.141.0
+xpath-utils==0.0.1
