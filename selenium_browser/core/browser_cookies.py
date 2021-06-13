@@ -8,7 +8,7 @@ import json, time
 from noraise import noraise
 from k_selenium_cookies import Cookies, Cookie
 
-from .webdriver_wraps import WebDriverWraps
+from .browser_webdriver_wraps import BrowserWebDriverWraps
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -16,7 +16,7 @@ from .webdriver_wraps import WebDriverWraps
 
 # ----------------------------------------------------- class: BrowserCookies ---------------------------------------------------- #
 
-class BrowserCookies(WebDriverWraps):
+class BrowserCookies(BrowserWebDriverWraps):
 
     # --------------------------------------------------- Public properties -------------------------------------------------- #
 

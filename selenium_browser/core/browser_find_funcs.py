@@ -16,9 +16,9 @@ from xpath_utils import XPathUtils, XPathCondition, XPathConditionRelation
 
 
 
-# ------------------------------------------------------- class: FindFuncs ------------------------------------------------------- #
+# ---------------------------------------------------- class: BrowserFindFuncs --------------------------------------------------- #
 
-class FindFuncs:
+class BrowserFindFuncs:
 
     # --------------------------------------------------- Public properties -------------------------------------------------- #
 

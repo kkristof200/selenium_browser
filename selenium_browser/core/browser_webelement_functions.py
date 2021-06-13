@@ -11,15 +11,15 @@ from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.action_chains import ActionChains
 
 # Local
-from .js_functions import JSFunctions
+from .browser_js_functions import BrowserJSFunctions
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 
 
 
-# -------------------------------------------------- class: WebelementFunctions -------------------------------------------------- #
+# ----------------------------------------------- class: BrowserWebelementFunctions ---------------------------------------------- #
 
-class WebelementFunctions(JSFunctions):
+class BrowserWebelementFunctions(BrowserJSFunctions):
 
     # ---------------------------------------------------- Public methods ---------------------------------------------------- #
 

@@ -12,9 +12,9 @@ from selenium.webdriver.remote.webdriver import WebDriver
 
 
 
-# ----------------------------------------------------- class: WebDriverWraps ---------------------------------------------------- #
+# ------------------------------------------------- class: BrowserWebDriverWraps ------------------------------------------------- #
 
-class WebDriverWraps:
+class BrowserWebDriverWraps:
 
     # --------------------------------------------------- Public properties -------------------------------------------------- #
 

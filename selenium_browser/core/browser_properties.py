@@ -9,16 +9,16 @@ from kproxy import Proxy
 from selenium.webdriver.remote.webdriver import WebDriver
 
 # Local
-from .js_functions import JSFunctions
+from .browser_js_functions import BrowserJSFunctions
 from ..models import Capabilities
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 
 
 
-# ------------------------------------------------------- class: Properties ------------------------------------------------------ #
+# --------------------------------------------------- class: BrowserProperties --------------------------------------------------- #
 
-class Properties(JSFunctions):
+class BrowserProperties(BrowserJSFunctions):
 
     # --------------------------------------------------- Public properties -------------------------------------------------- #
 

@@ -9,7 +9,7 @@ from noraise import noraise
 from kproxy import Proxy
 
 # Local
-from .__core import BrowserCookies, FindFuncs, Properties, WebelementFunctions
+from .__core import BrowserCookies, BrowserFindFuncs, BrowserProperties, BrowserWebelementFunctions
 from .models import Capabilities
 
 from .addons import AddonManager, AddonInstallSettings
@@ -24,9 +24,9 @@ from .utils import Utils
 
 class Browser(
     BrowserCookies,
-    FindFuncs,
-    Properties,
-    WebelementFunctions
+    BrowserFindFuncs,
+    BrowserProperties,
+    BrowserWebelementFunctions
 ):
 
     # --------------------------------------------------------- Init --------------------------------------------------------- #

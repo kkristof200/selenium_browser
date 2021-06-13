@@ -14,9 +14,9 @@ from selenium.webdriver.remote.webelement import WebElement
 
 
 
-# ------------------------------------------------------ class: JSFunctions ------------------------------------------------------ #
+# --------------------------------------------------- class: BrowserJSFunctions -------------------------------------------------- #
 
-class JSFunctions:
+class BrowserJSFunctions:
 
     # --------------------------------------------------- Public properties -------------------------------------------------- #
 
