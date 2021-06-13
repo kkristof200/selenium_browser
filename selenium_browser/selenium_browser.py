@@ -14,7 +14,7 @@ from .models import Capabilities
 
 from .addons import AddonManager, AddonInstallSettings
 from .__resources import Constants
-from .__utils import Utils
+from .utils import Utils
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -103,16 +103,6 @@ class Browser(
     @property
     def proxy(self) -> Optional[Proxy]:
         return self.__proxy
-
-
-    # ---------------------------------------------------- Private methods --------------------------------------------------- #
-
-    @staticmethod
-    def _get_user_agent(
-        user_agent: Optional[str] = None,
-        file_path: Optional[str] = None
-    ) -> Optional[str]:
-        return Utils.user_agent(user_agent, file_path)
 
 
     # ------------------------------------------------------ Destructor ------------------------------------------------------ #

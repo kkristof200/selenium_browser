@@ -1,1 +1,2 @@
-from .selenium_browser import SeleniumBrowser
+from .selenium_browser import Browser
+from .utils import Utils

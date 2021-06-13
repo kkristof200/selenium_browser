@@ -8,7 +8,7 @@ import os, tempfile, platform, subprocess
 from kproxy import Proxy
 
 # Local
-from ..__resources.constants import Constants
+from .__resources.constants import Constants
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -31,6 +31,15 @@ class Utils:
             Constants.GENERAL_COOKIES_FOLDER_NAME,
             cookies_id if cookies_id else profile_path.strip(os.sep).split(os.sep)[-1] if profile_path else Constants.DEFAULT_COOKIES_ID
         )
+
+    @classmethod
+    def user_agent_path(
+        cls,
+        cookies_folder_path: Optional[str] = None,
+        cookies_id: Optional[str] = None,
+        profile_path: Optional[str] = None
+    ) -> str:
+        return os.path.join(cls.cookies_folder_path, Constants.USER_AGENT_FILE_NAME)
 
     @staticmethod
     def user_agent(
