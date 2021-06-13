@@ -9,6 +9,7 @@ from kproxy import Proxy
 from selenium.webdriver.remote.webdriver import WebDriver
 
 # Local
+from .js_functions import JSFunctions
 from ..models import Capabilities
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
@@ -17,7 +18,7 @@ from ..models import Capabilities
 
 # ------------------------------------------------------- class: Properties ------------------------------------------------------ #
 
-class Properties:
+class Properties(JSFunctions):
 
     # --------------------------------------------------- Public properties -------------------------------------------------- #
 
@@ -26,7 +27,7 @@ class Properties:
 
     @property
     def user_agent(self) -> str:
-        return self._user_agent
+        return self.js_get_user_agent()
 
     @property
     def proxy(self) -> Optional[Proxy]:
@@ -39,7 +40,6 @@ class Properties:
 
     # -------------------------------------------------- Private properties -------------------------------------------------- #
 
-    _user_agent: Optional[str]
     _proxy     : Optional[Proxy]
 
 

@@ -62,7 +62,7 @@ class JSFunctions:
 
 
     def js_get_user_agent(self) -> str:
-        return self.execute_script("return navigator.userAgent;")
+        return self.execute_script('return navigator.userAgent;')
 
 
     def current_page_offset_y(self) -> float:

@@ -10,7 +10,7 @@ else:
 
 setuptools.setup(
     name='selenium_browser',
-    version='0.0.3',
+    version='0.0.4',
     author='Kristóf-Attila Kovács',
     description='selenium_browser',
     long_description=long_description,
