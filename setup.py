@@ -10,7 +10,7 @@ else:
 
 setuptools.setup(
     name='selenium_browser',
-    version='0.0.4',
+    version='0.0.5',
     author='Kristóf-Attila Kovács',
     description='selenium_browser',
     long_description=long_description,
@@ -18,7 +18,7 @@ setuptools.setup(
     url='https://github.com/kkristof200/selenium_browser',
     packages=setuptools.find_packages(),
     install_requires=[
-        'k-selenium-cookies>=0.0.4',
+        'k-selenium-cookies>=0.0.5',
         'kproxy>=0.0.1',
         'noraise>=0.0.16',
         'selenium>=3.141.0',
