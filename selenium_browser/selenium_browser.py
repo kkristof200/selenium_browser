@@ -9,7 +9,7 @@ from noraise import noraise
 from kproxy import Proxy
 
 # Local
-from .__core import BrowserCookies, BrowserFindFuncs, BrowserProperties, BrowserWebelementFunctions
+from .core import BrowserCookies, BrowserFindFuncs, BrowserProperties, BrowserWebelementFunctions
 from .models import Capabilities
 
 from .addons import AddonManager, AddonInstallSettings
