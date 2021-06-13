@@ -67,7 +67,7 @@ class Browser(
 
         self.default_find_func_timeout = default_find_func_timeout
         self.pickle_cookies = pickle_cookies
-        self.__proxy = proxy
+        self._proxy = proxy
 
         self.cookies_folder_path = Utils.cookies_folder_path(
             cookies_folder_path=cookies_folder_path,
@@ -96,13 +96,6 @@ class Browser(
             ),
             temporary=False
         )
-
-
-    # --------------------------------------------------- Public properties -------------------------------------------------- #
-
-    @property
-    def proxy(self) -> Optional[Proxy]:
-        return self.__proxy
 
 
     # ------------------------------------------------------ Destructor ------------------------------------------------------ #

@@ -10,7 +10,7 @@ else:
 
 setuptools.setup(
     name='selenium_browser',
-    version='0.0.2',
+    version='0.0.3',
     author='Kristóf-Attila Kovács',
     description='selenium_browser',
     long_description=long_description,
@@ -19,10 +19,10 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'k-selenium-cookies>=0.0.4',
-        'kproxy>=0.0.2',
-        'noraise>=0.0.26',
+        'kproxy>=0.0.1',
+        'noraise>=0.0.16',
         'selenium>=3.141.0',
-        'xpath-utils>=0.0.2'
+        'xpath-utils>=0.0.1'
     ],
     classifiers=[
         'Programming Language :: Python :: 3.4',
