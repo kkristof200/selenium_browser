@@ -39,7 +39,14 @@ class Utils:
         cookies_id: Optional[str] = None,
         profile_path: Optional[str] = None
     ) -> str:
-        return os.path.join(cls.cookies_folder_path, Constants.USER_AGENT_FILE_NAME)
+        return os.path.join(
+            cls.cookies_folder_path(
+                cookies_folder_path=cookies_folder_path,
+                cookies_id=cookies_id,
+                profile_path=profile_path
+            ),
+            Constants.USER_AGENT_FILE_NAME
+        )
 
     @staticmethod
     def user_agent(

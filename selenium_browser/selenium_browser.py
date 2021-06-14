@@ -1,7 +1,7 @@
 # ------------------------------------------------------------ Imports ----------------------------------------------------------- #
 
 # System
-from typing import Optional, Union, List, Tuple
+from typing import Optional, Union, List, Tuple, Callable
 import os, shutil, time
 
 # Pip
@@ -12,7 +12,6 @@ from kproxy import Proxy
 from .core import BrowserCookies, BrowserFindFuncs, BrowserProperties, BrowserWebelementFunctions
 from .models import Capabilities
 
-from .addons import AddonManager, AddonInstallSettings
 from .__resources import Constants
 from .utils import Utils
 
@@ -44,17 +43,8 @@ class Browser(
         # proxy
         proxy: Optional[Union[Proxy, str]] = None,
 
-        # addons
-        addons_folder_path: Optional[str] = None,
-        addon_settings: Optional[List[AddonInstallSettings]] = None,
-        supported_addon_file_extensions: List[str] = ['xpi', 'crx', 'zip'],
-        addon_url_format: str = 'PROVIDE_THIS',
-
         # find function
         default_find_func_timeout: int = 2.5,
-
-        # post init args
-        full_screen: bool = False,
 
         # webdriver_kwargs
         webdriver_executable_path: Optional[str] = None,
@@ -79,23 +69,6 @@ class Browser(
             webdriver_kwargs['executable_path'] = webdriver_executable_path
 
         self.driver = webdriver_class(**webdriver_kwargs)
-
-        if full_screen:
-            self.driver.fullscreen_window()
-
-        am = AddonManager(
-            self,
-            supported_addon_file_extensions=supported_addon_file_extensions,
-            addon_url_format=addon_url_format,
-        )
-
-        am.install_addons(
-            addons_settings=am.get_all_addon_settings(
-                addons_folder_path=addons_folder_path,
-                user_addon_settings=addon_settings
-            ),
-            temporary=False
-        )
 
 
     # ------------------------------------------------------ Destructor ------------------------------------------------------ #

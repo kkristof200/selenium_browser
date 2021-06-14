@@ -6,7 +6,7 @@ from typing import Optional
 # Pip
 from noraise import noraise
 
-from selenium.webdriver.remote.webdriver import WebDriver
+from selenium.webdriver.chrome.webdriver import WebDriver
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -64,6 +64,7 @@ class BrowserWebDriverWraps:
             if clean_current.strip('/') == clean_new.strip('/'):
                 return False
 
+        print('get url', url)
         self.driver.get(url)
 
         return True
