@@ -64,7 +64,6 @@ class BrowserWebDriverWraps:
             if clean_current.strip('/') == clean_new.strip('/'):
                 return False
 
-        print('get url', url)
         self.driver.get(url)
 
         return True
