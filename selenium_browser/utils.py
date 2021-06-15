@@ -1,7 +1,7 @@
 # ------------------------------------------------------------ Imports ----------------------------------------------------------- #
 
 # System
-from  typing import Optional, Dict, Union
+from  typing import Optional, Dict, Union, Tuple
 import os, tempfile, platform, subprocess
 
 # Pip
@@ -20,30 +20,54 @@ class Utils:
 
     # ---------------------------------------------------- Public methods ---------------------------------------------------- #
 
-    @staticmethod
-    def cookies_folder_path(
-        cookies_folder_path: Optional[str] = None,
-        cookies_id: Optional[str] = None,
+    @classmethod
+    def get_cache_paths(
+        cls,
         profile_path: Optional[str] = None,
+        profile_id: Optional[str] = None
+    ) -> Tuple[str, str, str]:
+        profile_path = cls.profile_folder_path(profile_path, profile_id)
+
+        return (
+            profile_path,
+            os.path.join(profile_path, Constants.GENERAL_COOKIES_FOLDER_NAME),
+            os.path.join(profile_path, Constants.USER_AGENT_FILE_NAME)
+        )
+
+    @staticmethod
+    def profile_folder_path(
+        profile_path: Optional[str] = None,
+        profile_id: Optional[str] = None
     ) -> str:
-        return cookies_folder_path or os.path.join(
+        return profile_path or os.path.join(
             '/tmp' if platform.system() == 'Darwin' else tempfile.gettempdir(),
-            Constants.GENERAL_COOKIES_FOLDER_NAME,
-            cookies_id if cookies_id else profile_path.strip(os.sep).split(os.sep)[-1] if profile_path else Constants.DEFAULT_COOKIES_ID
+            profile_id or Constants.GENERAL_PROFILE_FOLDER_NAME
+        )
+
+    @classmethod
+    def cookies_folder_path(
+        cls,
+        profile_path: Optional[str] = None,
+        profile_id: Optional[str] = None
+    ) -> str:
+        return os.path.join(
+            profile_path or cls.profile_folder_path(
+                profile_path=profile_path,
+                profile_id=profile_id
+            ),
+            Constants.GENERAL_COOKIES_FOLDER_NAME
         )
 
     @classmethod
     def user_agent_path(
         cls,
-        cookies_folder_path: Optional[str] = None,
-        cookies_id: Optional[str] = None,
-        profile_path: Optional[str] = None
+        profile_path: Optional[str] = None,
+        profile_id: Optional[str] = None
     ) -> str:
         return os.path.join(
-            cls.cookies_folder_path(
-                cookies_folder_path=cookies_folder_path,
-                cookies_id=cookies_id,
-                profile_path=profile_path
+            profile_path or cls.profile_folder_path(
+                profile_path=profile_path,
+                profile_id=profile_id
             ),
             Constants.USER_AGENT_FILE_NAME
         )

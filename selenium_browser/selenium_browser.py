@@ -36,8 +36,7 @@ class Browser(
         webdriver_class,
 
         # cookies
-        cookies_folder_path: Optional[str] = None,
-        cookies_id: Optional[str] = None,
+        cookies_folder_path: str,
         pickle_cookies: bool = False,
 
         # proxy
@@ -50,20 +49,12 @@ class Browser(
         webdriver_executable_path: Optional[str] = None,
         **webdriver_kwargs
     ):
-        '''EITHER PROVIDE 'cookies_id' OR  'cookies_folder_path'.
-           IF 'cookies_folder_path' is None, 'cokies_id', will be used to calculate 'cookies_folder_path'
-           IF 'cokies_id' is None, the name of the 'profile_path' follder wil lbe used. if that is Nonne too, 'test' will be used
-        '''
-
         self.default_find_func_timeout = default_find_func_timeout
         self.pickle_cookies = pickle_cookies
         self._proxy = proxy
 
-        self.cookies_folder_path = Utils.cookies_folder_path(
-            cookies_folder_path=cookies_folder_path,
-            cookies_id=cookies_id
-        )
-        os.makedirs(self.cookies_folder_path, exist_ok=True)
+        self.cookies_folder_path = cookies_folder_path
+        os.makedirs(cookies_folder_path, exist_ok=True)
 
         if webdriver_executable_path:
             webdriver_kwargs['executable_path'] = webdriver_executable_path
