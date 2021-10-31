@@ -10,7 +10,7 @@ else:
 
 setuptools.setup(
     name='selenium_browser',
-    version='0.0.12',
+    version='0.0.13',
     author='Kristóf-Attila Kovács',
     description='selenium_browser',
     long_description=long_description,
@@ -21,7 +21,7 @@ setuptools.setup(
         'k-selenium-cookies>=0.0.4',
         'kproxy>=0.0.1',
         'noraise>=0.0.16',
-        'selenium>=3.141.0',
+        'selenium>=4.0.0b4',
         'xpath-utils>=0.0.3'
     ],
     classifiers=[

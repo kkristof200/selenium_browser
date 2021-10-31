@@ -1,8 +1,8 @@
 # ------------------------------------------------------------ Imports ----------------------------------------------------------- #
 
 # System
-from typing import Optional, Union, List, Tuple, Callable
-import os, shutil, time
+from typing import Optional, Union
+import os
 
 # Pip
 from noraise import noraise
@@ -10,10 +10,10 @@ from kproxy import Proxy
 
 # Local
 from .core import BrowserCookies, BrowserFindFuncs, BrowserProperties, BrowserWebelementFunctions
-from .models import Capabilities
+# from .models import Capabilities
 
-from .__resources import Constants
-from .utils import Utils
+# from .__resources import Constants
+# from .utils import Utils
 
 # -------------------------------------------------------------------------------------------------------------------------------- #
 

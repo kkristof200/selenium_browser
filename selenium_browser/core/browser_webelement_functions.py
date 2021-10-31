@@ -3,12 +3,14 @@
 # System
 from typing import Optional, Tuple, Union, List
 import random, time, copy
+from sys import platform
 
 # Pip
 from noraise import noraise
 
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.common.keys import Keys
 
 # Local
 from .browser_js_functions import BrowserJSFunctions
@@ -26,6 +28,35 @@ class BrowserWebelementFunctions(BrowserJSFunctions):
     @noraise()
     def get_attribute(self, element, key: str) -> Optional[str]:
         return element.get_attribute(key)
+
+    @noraise(default_return_value=False)
+    def set_textfield_text_remove_old(
+        self,
+        element: WebElement,
+        text: str
+    ) -> bool:
+        time.sleep(0.5)
+        element.clear()
+        element.send_keys(Keys.BACK_SPACE)
+
+        try:
+            time.sleep(0.5)
+            element.send_keys(Keys.COMMAND if platform == 'darwin' else Keys.CONTROL, 'a')
+            time.sleep(0.5)
+            element.send_keys(Keys.BACK_SPACE)
+        except Exception as e:
+            print(e)
+
+        time.sleep(0.5)
+        element.send_keys('a')
+        time.sleep(0.5)
+        element.send_keys(Keys.BACK_SPACE)
+
+        time.sleep(0.5)
+
+        element.send_keys(text)
+
+        return True
 
     @noraise(default_return_value=False)
     def send_keys_delay_random(
