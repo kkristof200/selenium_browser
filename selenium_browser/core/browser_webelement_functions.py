@@ -29,7 +29,6 @@ class BrowserWebelementFunctions(BrowserJSFunctions):
     def get_attribute(self, element, key: str) -> Optional[str]:
         return element.get_attribute(key)
 
-    @noraise(default_return_value=False)
     def set_textfield_text_remove_old(
         self,
         element: WebElement,
