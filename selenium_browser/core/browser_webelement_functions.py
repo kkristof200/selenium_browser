@@ -34,6 +34,11 @@ class BrowserWebelementFunctions(BrowserJSFunctions):
         element: WebElement,
         text: str
     ) -> bool:
+        try:
+            element.click()
+        except:
+            pass
+
         time.sleep(0.5)
         element.clear()
         element.send_keys(Keys.BACK_SPACE)
